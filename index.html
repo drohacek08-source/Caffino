@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Caffíno & store — Kavárna Roudnice</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- MOBILE MENU OVERLAY -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#about" onclick="closeMobile()">O nás</a>
+  <a href="#menu-highlight" onclick="closeMobile()">Nabídka</a>
+  <a href="#gallery" onclick="closeMobile()">Galerie</a>
+  <a href="#contact" onclick="closeMobile()">Kontakt</a>
+</div>
+
+<!-- NAV -->
+<nav id="navbar">
+  <div style="display:flex;align-items:center;gap:1.2rem;">
+    <a href="#hero" class="nav-logo">Caffíno & store</a>
+    <div class="nav-social">
+      <a href="https://www.instagram.com/caffino_and_store/" target="_blank" class="nav-social-link" aria-label="Instagram">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+      </a>
+      <a href="https://www.facebook.com/p/Caff%C3%ADno-store-61574628770934/" target="_blank" class="nav-social-link" aria-label="Facebook">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+      </a>
+    </div>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#about">O nás</a></li>
+    <li><a href="#menu-highlight">Nabídka</a></li>
+    <li><a href="#gallery">Galerie</a></li>
+    <li><a href="#contact">Kontakt</a></li>
+  </ul>
+  <button class="nav-hamburger" id="hamburger" onclick="toggleMobile()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-left">
+    <p class="hero-label">Kavárna · Roudnice nad Labem</p>
+    <h1 class="hero-title">
+      Místo, kde<br>čas <em>plyne</em><br>pomaleji.
+    </h1>
+    <p class="hero-sub">
+      Ručně pražená káva, domácí dezerty a klidná atmosféra uprostřed města. Vítejte v Caffíno.
+    </p>
+    <a href="#about" class="btn">Poznejte nás</a>
+  </div>
+  <div class="hero-right">
+    <div class="hero-img-wrap">
+      <div class="hero-deco"></div>
+      <div class="hero-deco2"></div>
+      <img src="foto-hero.png" alt="Caffíno atmosféra" loading="lazy"
+        style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;">
+    </div>
+  </div>
+</section>
+
+<!-- O NÁS -->
+<section id="about">
+  <div class="about-img-block reveal">
+    <div class="about-img-rect" style="overflow:hidden;">
+      <img src="foto-about.png" alt="Caffíno — croissant a káva" loading="lazy"
+        style="width:100%;height:100%;object-fit:cover;display:block;">
+    </div>
+    <div class="about-offset"></div>
+  </div>
+  <div class="about-text reveal">
+    <p class="section-label">O nás</p>
+    <h2 class="section-title">Vášeň pro dobrou<br><em>kávu</em> od roku 2018</h2>
+    <p class="section-text">
+      Caffíno vzniklo z jednoduché myšlenky — vytvořit místo, kde si každý může v klidu sednout, nadechnout se a vychutnat šálek skutečně dobré kávy. Pracujeme výhradně s pečlivě vybranými pražírnami.
+    </p>
+    <p class="section-text">
+      Každý den ráno připravujeme čerstvé dezerty, které doplňují naše nápoje. Vítáme vás — ať přicházíte sami, s přáteli, nebo s laptopem.
+    </p>
+  </div>
+</section>
+
+<!-- NABÍDKA -->
+<section id="menu-highlight">
+  <div class="menu-header reveal">
+    <div>
+      <p class="section-label">Nabídka</p>
+      <h2 class="section-title">Co vás <em>potěší</em></h2>
+    </div>
+  </div>
+  <div class="menu-tabs reveal">
+    <button class="menu-tab active" onclick="switchTab('kavy')">☕ Kávy</button>
+    <button class="menu-tab" onclick="switchTab('napoje')">🍹 Nápoje</button>
+    <button class="menu-tab" onclick="switchTab('matcha')">🌿 Matcha</button>
+    <button class="menu-tab" onclick="switchTab('alkohol')">🍷 Alkohol</button>
+    <button class="menu-tab" onclick="switchTab('vino')">🍾 Víno</button>
+    <button class="menu-tab" onclick="switchTab('snack')">🧀 Snacky</button>
+  </div>
+  <div class="menu-panel active" id="tab-kavy">
+    <div class="menu-cols">
+      <div class="menu-col">
+        <div class="menu-col-title">Káva</div>
+        <div class="menu-row"><span>Espresso</span><span>50 Kč</span></div>
+        <div class="menu-row"><span>Espresso lungo</span><span>55 Kč</span></div>
+        <div class="menu-row"><span>Espresso double</span><span>80 Kč</span></div>
+        <div class="menu-row"><span>Espresso macchiato</span><span>55 Kč</span></div>
+        <div class="menu-row"><span>Cappuccino</span><span>65 Kč</span></div>
+        <div class="menu-row"><span>Flat white</span><span>85 Kč</span></div>
+        <div class="menu-row"><span>Latté macchiato</span><span>75 Kč</span></div>
+        <div class="menu-row"><span>Extra shot</span><span>20 Kč</span></div>
+        <div class="menu-note">Kávu lze připravit s alternativním mlékem (ovesné, mandlové, kokosové) + 15 Kč</div>
+      </div>
+      <div class="menu-col">
+        <div class="menu-col-title">Kávové nápoje</div>
+        <div class="menu-row"><span>Espresso Tonic</span><span>85 Kč</span></div>
+        <div class="menu-row"><span>Ice peanuts</span><span>110 Kč</span></div>
+        <div class="menu-row"><span>Ice Baileys</span><span>110 Kč</span></div>
+        <div class="menu-col-title" style="margin-top:2rem;">Teplé nápoje</div>
+        <div class="menu-row"><span>Horká čokoláda</span><span>75 Kč</span></div>
+        <div class="menu-row"><span>Chai latté</span><span>85 Kč</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="menu-panel" id="tab-napoje">
+    <div class="menu-cols">
+      <div class="menu-col">
+        <div class="menu-col-title">Limonády (0,4l)</div>
+        <div class="menu-row"><span>Citrusová</span><span>70 Kč</span></div>
+        <div class="menu-row"><span>Lesní plody</span><span>70 Kč</span></div>
+        <div class="menu-row"><span>Levandulová</span><span>70 Kč</span></div>
+        <div class="menu-note">Limonády jsou vyráběny standardně s ledem</div>
+        <div class="menu-col-title" style="margin-top:2rem;">Čaj</div>
+        <div class="menu-row"><span>Zelený</span><span>70 Kč</span></div>
+        <div class="menu-row"><span>Jasmínový</span><span>70 Kč</span></div>
+        <div class="menu-row"><span>Černý</span><span>70 Kč</span></div>
+        <div class="menu-row"><span>Ovocný plod / exotické ovoce</span><span>70 Kč</span></div>
+        <div class="menu-row"><span>Z čerstvého zázvoru / máty / mix</span><span>70 Kč</span></div>
+      </div>
+      <div class="menu-col">
+        <div class="menu-col-title">Nealkoholické nápoje</div>
+        <div class="menu-row"><span>Coca-Cola (0,3l)</span><span>45 Kč</span></div>
+        <div class="menu-row"><span>Voda neperlivá / perlivá (0,3l)</span><span>45 Kč</span></div>
+        <div class="menu-row"><span>Voda neperlivá / perlivá (0,7l)</span><span>75 Kč</span></div>
+        <div class="menu-row"><span>Džus pomeranč / jablko</span><span>45 Kč</span></div>
+        <div class="menu-row"><span>Karafa vody s mátou a citrusy (1l)</span><span>55 Kč</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="menu-panel" id="tab-matcha">
+    <div class="menu-cols">
+      <div class="menu-col">
+        <div class="menu-col-title">Matcha</div>
+        <div class="menu-row"><span>Coco mango matcha</span><span>125 Kč</span></div>
+        <div class="menu-row"><span>Coco matcha</span><span>95 Kč</span></div>
+        <div class="menu-row"><span>Almond matcha*</span><span>95 Kč</span></div>
+        <div class="menu-row"><span>Matcha latté*</span><span>85 Kč</span></div>
+        <div class="menu-row"><span>Maracuja Matcha tonic</span><span>110 Kč</span></div>
+        <div class="menu-row"><span>Mango-maracuja matcha limonáda</span><span>110 Kč</span></div>
+        <div class="menu-note">* Nápoje lze připravit v teplé či studené variantě</div>
+      </div>
+    </div>
+  </div>
+  <div class="menu-panel" id="tab-alkohol">
+    <div class="menu-cols">
+      <div class="menu-col">
+        <div class="menu-col-title">Spritz</div>
+        <div class="menu-row"><span>Aperol spritz</span><span>120 Kč</span></div>
+        <div class="menu-row"><span>Hugo spritz</span><span>110 Kč</span></div>
+        <div class="menu-row"><span>Pink spritz</span><span>110 Kč</span></div>
+        <div class="menu-row"><span>Lavender spritz</span><span>120 Kč</span></div>
+        <div class="menu-row"><span>Maracuja spritz</span><span>120 Kč</span></div>
+        <div class="menu-row"><span>Mimosa</span><span>–</span></div>
+        <div class="menu-col-title" style="margin-top:2rem;">Míchané nápoje</div>
+        <div class="menu-row"><span>Mojito</span><span>140 Kč</span></div>
+        <div class="menu-row"><span>Cuba Libre</span><span>140 Kč</span></div>
+        <div class="menu-row"><span>Gin Tonic</span><span>140 Kč</span></div>
+        <div class="menu-row"><span>Pink Gin Tonic</span><span>140 Kč</span></div>
+        <div class="menu-row"><span>Caipirinha</span><span>145 Kč</span></div>
+        <div class="menu-row"><span>Skinny Bitch</span><span>120 Kč</span></div>
+        <div class="menu-row"><span>Margarita</span><span>150 Kč</span></div>
+        <div class="menu-row"><span>Spicy ginger</span><span>150 Kč</span></div>
+      </div>
+      <div class="menu-col">
+        <div class="menu-col-title">Destiláty (0,04l)</div>
+        <div class="menu-row"><span>Campari</span><span>70 Kč</span></div>
+        <div class="menu-row"><span>Jäger</span><span>65 Kč</span></div>
+        <div class="menu-row"><span>Fernet</span><span>60 Kč</span></div>
+        <div class="menu-row"><span>Jack Daniel's</span><span>85 Kč</span></div>
+        <div class="menu-row"><span>Tullamore</span><span>85 Kč</span></div>
+        <div class="menu-row"><span>Havana</span><span>65 Kč</span></div>
+        <div class="menu-row"><span>Bacardi spiced</span><span>65 Kč</span></div>
+        <div class="menu-row"><span>Legendario</span><span>65 Kč</span></div>
+        <div class="menu-row"><span>Jose Cuervo Tequila</span><span>65 Kč</span></div>
+        <div class="menu-row"><span>Olmeza Tequila</span><span>65 Kč</span></div>
+        <div class="menu-row"><span>Beefeater</span><span>75 Kč</span></div>
+        <div class="menu-row"><span>Bombay</span><span>90 Kč</span></div>
+        <div class="menu-row"><span>Bulldog</span><span>90 Kč</span></div>
+        <div class="menu-row"><span>Hruškovice</span><span>80 Kč</span></div>
+        <div class="menu-row"><span>Zelená</span><span>50 Kč</span></div>
+        <div class="menu-row"><span>Amareto</span><span>50 Kč</span></div>
+        <div class="menu-row"><span>Baileys</span><span>75 Kč</span></div>
+        <div class="menu-col-title" style="margin-top:2rem;">Pivo (lahvové)</div>
+        <div class="menu-row"><span>Plzeň 0,5l</span><span>45 Kč</span></div>
+        <div class="menu-row"><span>Corona 0,33l</span><span>85 Kč</span></div>
+        <div class="menu-row"><span>Hartog Jan 0,33l</span><span>45 Kč</span></div>
+        <div class="menu-row"><span>Sezónní speciál</span><span>–</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="menu-panel" id="tab-vino">
+    <div class="menu-cols">
+      <div class="menu-col">
+        <div class="menu-col-title">Prosecco</div>
+        <div class="menu-row"><span>Apolo Prosecco, DOCG</span><span>85 / 350 Kč</span></div>
+        <div class="menu-row"><span>Perla di Italia, vino spumante, Cuvée</span><span>85 / 390 Kč</span></div>
+        <div class="menu-row"><span>Lucca Ricci, DOC, Treviso</span><span>85 / 330 Kč</span></div>
+        <div class="menu-row"><span>Rebuli, DOC, Treviso</span><span>85 / 380 Kč</span></div>
+        <div class="menu-row"><span>Meduda Grillo Cuvée, DOC, Sicília</span><span>85 / 450 Kč</span></div>
+        <div class="menu-col-title" style="margin-top:2rem;">Rosé</div>
+        <div class="menu-row"><span>Con-tré, Pinot Grigio, Extra dry</span><span>85 / 360 Kč</span></div>
+        <div class="menu-row"><span>Lucca Ricci, DOC, Treviso</span><span>105 / 450 Kč</span></div>
+        <div class="menu-row"><span>Rebuli, DOC, Treviso</span><span>105 / 450 Kč</span></div>
+        <div class="menu-row"><span>Integrale col Fondo, BIO, Frizzante</span><span>– / 360 Kč</span></div>
+      </div>
+      <div class="menu-col">
+        <div class="menu-col-title">Bílé</div>
+        <div class="menu-row"><span>Ryzlink Vlašský 2024, Pavel Skráček, suché</span><span>75 / 330 Kč</span></div>
+        <div class="menu-row"><span>Chardonnay 2023, Pavel Skráček, suché</span><span>80 / 345 Kč</span></div>
+        <div class="menu-row"><span>Pálava 2023, Pavel Skráček, polosuché</span><span>82 / 345 Kč</span></div>
+        <div class="menu-row"><span>Müller Thurgau 2023, Vinařství Fitra, suché</span><span>85 / 360 Kč</span></div>
+        <div class="menu-row"><span>Sauvignon Blanc 2023, CA Di Rajo, suché</span><span>85 / 360 Kč</span></div>
+        <div class="menu-row"><span>Chardonnay, Lorenzonetto 2022, polosuché</span><span>85 / 365 Kč</span></div>
+        <div class="menu-row"><span>Sadve, Zeni 2022, polosuché (lahev 375ml)</span><span>– / 185 Kč</span></div>
+        <div class="menu-col-title" style="margin-top:2rem;">Červené</div>
+        <div class="menu-row"><span>Malbec, Mendoza, Argentina 2024, 14%</span><span>75 / 330 Kč</span></div>
+        <div class="menu-row"><span>Merlot, Ca Di Rajo, Itálie, 13%</span><span>85 / 360 Kč</span></div>
+        <div class="menu-row"><span>Primitivo, Famiglia Angello, Itálie, 13,5%</span><span>– / 390 Kč</span></div>
+        <div class="menu-row"><span>Capoforte Primitivo, Itálie, 14,5%</span><span>– / 525 Kč</span></div>
+        <div class="menu-col-title" style="margin-top:2rem;">Růžové</div>
+        <div class="menu-row"><span>Cabernet Moravia 2023, Pavel Skráček, polosuché</span><span>75 / 330 Kč</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="menu-panel" id="tab-snack">
+    <div class="menu-cols">
+      <div class="menu-col">
+        <div class="menu-col-title">Prkénka (od 15 hod.)</div>
+        <div class="menu-row"><span>Variace sýrů 500g <span class="menu-sub">5 druhů sýrů, pečivo, dip</span></span><span>400 Kč</span></div>
+        <div class="menu-row"><span>Italské prkénko 500g <span class="menu-sub">3 druhy sýrů, 2 druhy uzenin, olivy, dip, pečivo, ořechy</span></span><span>400 Kč</span></div>
+        <div class="menu-row"><span>Variace sýrů 300g <span class="menu-sub">3 druhy sýrů, omáčka, pečivo</span></span><span>260 Kč</span></div>
+        <div class="menu-row"><span>Mini snack 200g <span class="menu-sub">2 druhy sýrů, uzenina, ořechy, pečivo, dip</span></span><span>190 Kč</span></div>
+      </div>
+      <div class="menu-col">
+        <div class="menu-col-title">Ostatní</div>
+        <div class="menu-row"><span>Olivy a sýry 180g</span><span>190 Kč</span></div>
+        <div class="menu-row"><span>Olivy 100g</span><span>95 Kč</span></div>
+        <div class="menu-row"><span>Ořechy 60g</span><span>65 Kč</span></div>
+        <div class="menu-row"><span>Trio (dva druhy mandlí, olivy) 180g</span><span>160 Kč</span></div>
+        <div class="menu-note" style="margin-top:1.5rem;">Najdete také do naší vitríny a baru nabídku teplých i studených bagetek a sladké dezerty.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALERIE -->
+<section id="gallery">
+  <div class="gallery-header reveal">
+    <p class="section-label">Galerie</p>
+    <h2 class="section-title">Naše <em>atmosféra</em></h2>
+  </div>
+  <div class="gallery-grid reveal">
+    <div class="gal-item"><img src="foto-g7.png" alt="Zimní nápoj" loading="lazy"></div>
+    <div class="gal-item"><img src="foto-g8.png" alt="Vaječná omeleta" loading="lazy"></div>
+    <div class="gal-item"><img src="foto-matcha.png" alt="Matcha latté" loading="lazy"></div>
+    <div class="gal-item"><img src="foto-caj.png" alt="Čaj s waflí" loading="lazy"></div>
+  </div>
+</section>
+
+<!-- KONTAKT -->
+<section id="contact">
+  <div class="contact-info reveal">
+    <p class="section-label">Kontakt</p>
+    <h2 class="section-title">Přijďte<br>nás <em>navštívit</em></h2>
+    <div class="contact-detail" style="margin-top:2rem;">
+      <div class="contact-icon">📍</div>
+      <div>
+        <div class="contact-label">Adresa</div>
+        <div class="contact-val">Nám. Jana z Dražic 318<br>413 01 Roudnice nad Labem</div>
+      </div>
+    </div>
+    <div class="contact-detail">
+      <div class="contact-icon">📞</div>
+      <div>
+        <div class="contact-label">Telefon</div>
+        <div class="contact-val">
+          <a href="#" onclick="if(confirm('Chcete zavolat na číslo 725 822 363?')){window.location.href='tel:+420725822363';}return false;"
+             style="color:inherit;text-decoration:none;border-bottom:1px solid var(--sand);">
+            725 822 363
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="contact-detail" style="align-items:flex-start;">
+      <div class="contact-icon">🕐</div>
+      <div>
+        <div class="contact-label">Otevírací doba</div>
+        <div class="hours-grid" style="margin-top:0.6rem;">
+          <span class="hours-day">Pondělí – Středa</span><span class="hours-time">7:30 – 20:00</span>
+          <span class="hours-day">Čtvrtek</span><span class="hours-time">7:30 – 22:00</span>
+          <span class="hours-day">Pátek</span><span class="hours-time">7:30 – 23:00</span>
+          <span class="hours-day">Sobota</span><span class="hours-time">9:00 – 23:00</span>
+          <span class="hours-day">Neděle</span><span class="hours-time">9:00 – 18:00</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="contact-map reveal">
+    <p class="section-label" style="margin-bottom:1.2rem;">Kde nás najdete</p>
+    <div class="map-iframe-wrap" style="display:block;">
+      <iframe
+        src="https://www.google.com/maps?q=Nám.+Jana+z+Dražic+318,+413+01+Roudnice+nad+Labem&output=embed"
+        width="100%" height="100%" style="border:0;" allowfullscreen loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+    <a href="https://maps.google.com/?q=Nám.+Jana+z+Dražic+318,+413+01+Roudnice+nad+Labem"
+       target="_blank"
+       style="display:inline-block;margin-top:1rem;font-size:0.78rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--mocha);text-decoration:none;border-bottom:1px solid var(--sand);padding-bottom:2px;">
+      Otevřít v Google Maps →
+    </a>
+  </div>
+</section>
+
+<!-- RECENZE -->
+<section id="reviews">
+  <div class="gallery-header reveal">
+    <p class="section-label">Google recenze</p>
+    <h2 class="section-title">Co říkají <em>hosté</em></h2>
+  </div>
+  <div class="reviews-grid reveal">
+
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">„Naprosto úžasná kavárna! Matcha latte byla perfektní a prostředí je neskutečně útulné. Určitě se vrátím."</p>
+      <div class="review-author">
+        <div class="review-avatar">K</div>
+        <div>
+          <div class="review-name">Karolína Nováková</div>
+          <div class="review-date">Google · před 2 týdny</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">„Nejlepší kavárna v Roudnici! Skvělá obsluha, výborná káva a krásný interiér. Croissant byl naprosto božský."</p>
+      <div class="review-author">
+        <div class="review-avatar">T</div>
+        <div>
+          <div class="review-name">Tomáš Procházka</div>
+          <div class="review-date">Google · před měsícem</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">„Konečně kavárna, která ví co dělá. Flat white na špičkové úrovni, příjemná obsluha a skvělá atmosféra. Doporučuji všem!"</p>
+      <div class="review-author">
+        <div class="review-avatar">M</div>
+        <div>
+          <div class="review-name">Markéta Horáčková</div>
+          <div class="review-date">Google · před 3 týdny</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">„Pravidelně chodím na snídaně a pokaždé jsem nadšená. Omeleta s lososem je prostě hit. Moc příjemné místo."</p>
+      <div class="review-author">
+        <div class="review-avatar">L</div>
+        <div>
+          <div class="review-name">Lucie Dvořáčková</div>
+          <div class="review-date">Google · před 5 dny</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div style="text-align:center; margin-top:2.5rem;" class="reveal">
+    <a href="https://maps.google.com/?q=Caffíno+store+Roudnice+nad+Labem" target="_blank" class="btn" style="opacity:1;animation:none;">
+      Všechny recenze na Google
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span class="footer-logo">Caffíno & store</span>
+  <span>© 2025 Caffíno & store — Roudnice nad Labem</span>
+  <div class="footer-social">
+    <a href="https://www.instagram.com/caffino_and_store/" target="_blank" class="footer-social-link">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+      Instagram
+    </a>
+    <a href="https://www.facebook.com/p/Caff%C3%ADno-store-61574628770934/" target="_blank" class="footer-social-link">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+      Facebook
+    </a>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
